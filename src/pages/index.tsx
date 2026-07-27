@@ -1,6 +1,7 @@
 import {useEffect, useRef, type ReactNode} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import ContactForm from '../components/ContactForm';
 
 import '../css/landing.css';
 
@@ -225,17 +226,6 @@ function markup(): string {
     </div>
   </section>
 
-  <section id="contact" class="lt-section lt-final">
-    <div class="lt-wrap">
-      <div class="lt-inner lt-reveal">
-        <h2>Faites parler vos personnages.</h2>
-        <p>Une démo, un échange sur votre salle, et on regarde ensemble comment Leticia s'installe chez vous.</p>
-        <div class="lt-cta">
-          <a class="lt-btn" href="mailto:leticia@ggestin.com?subject=D%C3%A9mo%20Leticia">Demander une démo</a>
-        </div>
-      </div>
-    </div>
-  </section>
   `;
 }
 
@@ -329,12 +319,25 @@ export default function Home(): ReactNode {
 
   return (
     <Layout title="Interrogatoires narratifs par IA" description={siteConfig.tagline as string}>
-      <div
-        className="lt-root"
-        ref={rootRef}
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{__html: markup()}}
-      />
+      <div className="lt-root" ref={rootRef}>
+        <div
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{__html: markup()}}
+        />
+        <section id="contact" className="lt-section lt-final">
+          <div className="lt-wrap">
+            <div className="lt-inner lt-reveal">
+              <h2>Faites parler vos personnages.</h2>
+              <p>Une démo, un échange sur votre salle, et on regarde ensemble comment Leticia s'installe chez vous.</p>
+              <ContactForm />
+              <p className="lt-form-alt">
+                Vous préférez l'email ?{' '}
+                <a href="mailto:leticia@ggestin.com?subject=D%C3%A9mo%20Leticia">leticia@ggestin.com</a>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
     </Layout>
   );
 }

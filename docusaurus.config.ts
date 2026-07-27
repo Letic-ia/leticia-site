@@ -67,6 +67,16 @@ const config: Config = {
         redirects: [{from: '/docs', to: '/docs/intro'}],
       },
     ],
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        indexBlog: false,
+        // "mod+k" resolves to Ctrl+K on Windows/Linux and Cmd+K on macOS.
+        searchBarShortcutHint: true,
+        searchBarShortcutKeymap: 'mod+k',
+      },
+    ],
   ],
 
   themeConfig: {
@@ -97,11 +107,10 @@ const config: Config = {
       },
       // One-page navigation: shortcuts to the landing sections + a demo CTA.
       // Still no links to the documentation - it stays off the vitrine.
+      // Kept to the essentials (Fonctionnement/Souveraineté/Déploiement stay
+      // as page sections, just without their own navbar entry).
       items: [
-        {to: '/#how', label: 'Fonctionnement', position: 'left'},
         {to: '/#features', label: 'Fonctionnalités', position: 'left'},
-        {to: '/#sovereign', label: 'Souveraineté', position: 'left'},
-        {to: '/#deploy', label: 'Déploiement', position: 'left'},
         {to: '/#pricing', label: 'Tarifs', position: 'left'},
         {to: '/#faq', label: 'FAQ', position: 'left'},
         {to: '/#contact', label: 'Demander une démo', position: 'right', className: 'navbar-cta'},

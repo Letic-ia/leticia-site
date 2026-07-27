@@ -52,8 +52,18 @@ html {
   border-radius: 4px;
   padding: 0.4rem 0.9rem;
   margin-left: 0.4rem;
+  margin-right: 0.7rem;
   transition: background 0.15s ease;
 }
 .navbar-cta:hover {
   background: var(--ifm-color-primary-dark);
+}
+
+/* Docs pages already show the section context (sidebar, breadcrumbs): drop
+   the "Leticia" navbar text there and keep just the logo mark. The vitrine
+   (marketing homepage) keeps the full logo + title. Docusaurus tags doc
+   routes with a "plugin-docs" class on <html> at build time, so this needs
+   no client-side JS. */
+html.plugin-docs .navbar__title {
+  display: none;
 }
