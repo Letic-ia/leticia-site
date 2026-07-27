@@ -170,6 +170,28 @@ html[data-theme="dark"] .lt-root {
 .lt-final p { color: var(--lt-muted); margin: 1rem auto 0; max-width: 48ch; position: relative; }
 .lt-final .lt-cta { justify-content: center; }
 
+/* contact form */
+.lt-form { text-align: left; max-width: 34rem; margin: 2rem auto 0; position: relative; display: flex; flex-direction: column; gap: 1rem; }
+.lt-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 560px) { .lt-form-row { grid-template-columns: 1fr; } }
+.lt-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.lt-field label { font-size: 0.85rem; font-weight: 600; color: var(--lt-ink); }
+.lt-field input, .lt-field textarea {
+  font: inherit; color: var(--lt-ink); background: var(--lt-ground);
+  border: 1px solid var(--lt-hairline); border-radius: var(--lt-radius);
+  padding: 0.65em 0.8em; resize: vertical;
+}
+.lt-field input:focus-visible, .lt-field textarea:focus-visible {
+  outline: 2px solid var(--lt-accent); outline-offset: 1px;
+}
+.lt-form-hp { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; }
+.lt-form > .lt-btn { align-self: flex-start; }
+.lt-form-error { color: var(--lt-accent); font-size: 0.9rem; }
+.lt-form-done { max-width: 34rem; margin: 2rem auto 0; }
+.lt-form-done h3 { font-size: 1.3rem; font-weight: 700; }
+.lt-form-done p { color: var(--lt-muted); margin-top: 0.5rem; }
+.lt-form-alt { font-size: 0.9rem; margin-top: 1.25rem !important; }
+
 /* pricing */
 .lt-pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; align-items: stretch; }
 @media (max-width: 860px) { .lt-pricing { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; } }
