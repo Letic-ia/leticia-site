@@ -21,7 +21,7 @@ Le service est édité par un **entrepreneur individuel (EI)** :
 - **Immatriculation** : Registre National des Entreprises (RNE)
 - **N° de TVA intracommunautaire** : FR89934449752
 - **Adresse professionnelle** : 60 rue François 1er, 75008 Paris
-- **E-mail de contact** : [leticia@ggestin.com](mailto:leticia@ggestin.com)
+- **E-mail de contact** : [leticia@leticia-app.com](mailto:leticia@leticia-app.com)
 - **Téléphone** : +33 6 22 25 82 10
 
 ## Directeur de la publication
@@ -48,7 +48,7 @@ interdite.
 ## Contact
 
 Pour toute question relative au service ou à ces mentions :
-[leticia@ggestin.com](mailto:leticia@ggestin.com).
+[leticia@leticia-app.com](mailto:leticia@leticia-app.com).
 
 Pour les questions relatives aux données personnelles, voir la page
 [RGPD & données personnelles](./rgpd).

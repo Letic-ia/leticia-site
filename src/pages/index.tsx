@@ -332,7 +332,7 @@ export default function Home(): ReactNode {
               <ContactForm />
               <p className="lt-form-alt">
                 Vous préférez l'email ?{' '}
-                <a href="mailto:leticia@ggestin.com?subject=D%C3%A9mo%20Leticia">leticia@ggestin.com</a>
+                <a href="mailto:leticia@leticia-app.com?subject=D%C3%A9mo%20Leticia">leticia@leticia-app.com</a>
               </p>
             </div>
           </div>
