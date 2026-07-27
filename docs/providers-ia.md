@@ -52,6 +52,137 @@ fournisseur si besoin. **OpenRouter** donne accès à des centaines de modèles 
 un seul compte ; **Anthropic** passe par son endpoint compatible OpenAI.
 :::
 
+## Modèles proposés (presets)
+
+Pour chaque provider, le champ **Modèle** est un menu déroulant pré-rempli
+avec plusieurs modèles courants, plus une entrée **Autre** qui fait apparaître
+un champ libre pour saisir n'importe quel identifiant. Voici les presets
+actuellement proposés par brique :
+
+<details>
+<summary><strong>OpenAI</strong></summary>
+
+| Brique | Modèles proposés |
+|---|---|
+| Chat | `gpt-4o-mini` · `gpt-5.5` · `gpt-5` · `gpt-5-mini` · `gpt-5-nano` · `o4-mini` (raisonnement) · `gpt-5-codex` |
+| Images | `gpt-image-1` · `gpt-image-1-mini` |
+| Transcription (STT) | `gpt-4o-mini-transcribe` · `gpt-4o-transcribe` · `whisper-1` (héritage) |
+| Synthèse (TTS) | `gpt-4o-mini-tts` · `tts-1` (faible latence) |
+
+</details>
+
+<details>
+<summary><strong>Google Gemini</strong></summary>
+
+| Brique | Modèles proposés |
+|---|---|
+| Chat | `gemini-3-flash-preview` · `gemini-3-pro-preview` · `gemini-2.5-pro` · `gemini-2.5-flash` |
+| Images | `gemini-2.0-flash-preview-image-generation` · `gemini-2.5-flash-image` (Nano Banana) |
+| Transcription (STT) | `gemini-3-flash-preview` |
+| Synthèse (TTS) | `gemini-3.1-flash-tts-preview` |
+
+</details>
+
+<details>
+<summary><strong>Anthropic (Claude)</strong></summary>
+
+Chat : `claude-sonnet-5` · `claude-opus-5` · `claude-haiku-4-5` · `claude-sonnet-4-6` · `claude-opus-4-8`
+
+</details>
+
+<details>
+<summary><strong>Groq</strong></summary>
+
+| Brique | Modèles proposés |
+|---|---|
+| Chat | `openai/gpt-oss-120b` · `openai/gpt-oss-20b` · `moonshotai/kimi-k2-instruct` |
+| Transcription (STT) | `whisper-large-v3-turbo` · `whisper-large-v3` |
+
+</details>
+
+<details>
+<summary><strong>Mistral AI</strong></summary>
+
+Chat : `mistral-large-latest` · `mistral-medium-latest` · `mistral-small-latest` · `codestral-latest`
+
+</details>
+
+<details>
+<summary><strong>DeepSeek</strong></summary>
+
+Chat : `deepseek-v4-flash` · `deepseek-v4-pro` (raisonnement)
+
+</details>
+
+<details>
+<summary><strong>xAI (Grok)</strong></summary>
+
+Chat : `grok-2-latest` · `grok-4.3`
+
+</details>
+
+<details>
+<summary><strong>Together AI</strong></summary>
+
+Chat : `meta-llama/Llama-3.3-70B-Instruct-Turbo` · `Qwen/Qwen2.5-72B-Instruct-Turbo` · `deepseek-ai/DeepSeek-V3`
+
+</details>
+
+<details>
+<summary><strong>Perplexity</strong></summary>
+
+Chat : `sonar` · `sonar-pro` · `sonar-reasoning-pro` · `sonar-deep-research`
+
+</details>
+
+<details>
+<summary><strong>Fireworks AI</strong></summary>
+
+Chat : `accounts/fireworks/models/llama-v3p3-70b-instruct` · `accounts/fireworks/models/qwen2p5-72b-instruct` · `accounts/fireworks/models/deepseek-v3`
+
+</details>
+
+<details>
+<summary><strong>Cerebras</strong></summary>
+
+Chat : `llama3.1-8b` · `qwen-3-235b-a22b-instruct-2507` · `gpt-oss-120b`
+
+</details>
+
+## Voix (TTS)
+
+Comme pour le modèle, **OpenAI** et **Google Gemini** proposent chacun un menu
+déroulant de voix nommées pour la synthèse vocale, avec la même entrée
+**Autre** pour saisir un nom de voix personnalisé. Les autres providers TTS
+(**Piper local**, **Personnalisé**) n'ont pas de catalogue fixe : le champ
+**Voix** est alors directement un champ libre.
+
+<details>
+<summary><strong>OpenAI</strong> - 13 voix</summary>
+
+`alloy` · `ash` · `ballad` · `coral` · `echo` · `fable` · `onyx` · `nova` ·
+`sage` · `shimmer` · `verse` · `marin` · `cedar`
+
+</details>
+
+<details>
+<summary><strong>Google Gemini</strong> - 29 voix</summary>
+
+`Zephyr` · `Puck` · `Charon` · `Kore` · `Fenrir` · `Leda` · `Orus` · `Aoede` ·
+`Callirrhoe` · `Autonoe` · `Enceladus` · `Iapetus` · `Umbriel` · `Algieba` ·
+`Despina` · `Erinome` · `Algenib` · `Rasalgethi` · `Laomedeia` · `Achernar` ·
+`Alnilam` · `Schedar` · `Gacrux` · `Pulcherrima` · `Achird` · `Zubenelgenubi` ·
+`Vindemiatrix` · `Sadachbia` · `Sadaltager` · `Sulafat`
+
+Ces voix sont des presets de timbre/rythme, pas des voix par langue : la
+langue parlée suit le texte envoyé au modèle.
+
+</details>
+
+Le catalogue complet (modèles et voix, par provider) est aussi disponible en
+JSON via `GET /api/settings/providers` - utile pour scripter une vérification
+ou construire votre propre outillage autour de Leticia.
+
 ## Endpoints attendus
 
 Un serveur local doit exposer, selon la brique, ces routes compatibles OpenAI :
