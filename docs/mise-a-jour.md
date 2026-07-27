@@ -25,12 +25,12 @@ jour.
 ## Docker
 
 ```bash
-docker pull ghcr.io/jacetheblu/leticia:latest
+docker pull ghcr.io/letic-ia/leticia:latest
 docker rm -f leticia
 docker run -d --name leticia -p 8000:8000 \
   -e SETTINGS_MASTER_KEY="$SETTINGS_MASTER_KEY" \
   -v leticia_data:/app/data \
-  ghcr.io/jacetheblu/leticia:latest
+  ghcr.io/letic-ia/leticia:latest
 ```
 
 Le volume `leticia_data` est conservé : vos données et votre configuration

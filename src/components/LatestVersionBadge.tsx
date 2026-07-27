@@ -5,7 +5,7 @@ interface ReleaseInfo {
   publishedAt: string | null;
 }
 
-const RELEASES_URL = 'https://api.github.com/repos/JaceTheBlu/leticia/releases/latest';
+const RELEASES_URL = 'https://api.github.com/repos/Letic-ia/leticia-release/releases/latest';
 
 /** Live "latest version" badge, fetched client-side from the public GitHub
  * releases API - the same source the app itself checks against. Silent on
@@ -56,7 +56,7 @@ export default function LatestVersionBadge(): React.ReactElement | null {
       {published && <span style={{color: 'var(--ifm-color-emphasis-700)'}}> (publiée le {published})</span>}
       {' - '}
       <a
-        href={`https://github.com/JaceTheBlu/leticia/releases/tag/v${release.version}`}
+        href={`https://github.com/Letic-ia/leticia-release/releases/tag/v${release.version}`}
         target="_blank"
         rel="noopener noreferrer"
       >

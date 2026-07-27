@@ -18,7 +18,7 @@ const config: Config = {
   url: 'https://leticia-app.com',
   baseUrl: '/',
 
-  organizationName: 'JaceTheBlu',
+  organizationName: 'Letic-ia',
   projectName: 'leticia-site',
 
   onBrokenLinks: 'throw',
