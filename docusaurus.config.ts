@@ -57,6 +57,18 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        // Bare /docs has no page of its own (the docs plugin's routeBasePath
+        // is /docs, but nothing lives at its root) - send it straight to the
+        // actual landing doc instead of a 404.
+        redirects: [{from: '/docs', to: '/docs/intro'}],
+      },
+    ],
+  ],
+
   themeConfig: {
     // Social card + shared SEO tags. `image` becomes og:image / twitter:image;
     // `metadata` fills the description, keywords and card type on every page.

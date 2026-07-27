@@ -66,6 +66,9 @@ Un serveur local doit exposer, selon la brique, ces routes compatibles OpenAI :
 Dans Leticia, l'**URL de base** est la partie avant `/v1` (ex. `http://localhost:11434/v1`),
 et le **modèle** est le nom du modèle chargé sur le serveur.
 
+Pour le détail exact des paquets échangés (utile pour déboguer votre propre
+serveur, ou en construire un) : [Protocole IA](./protocole-ia).
+
 ## Applications pour l'IA locale
 
 ### LLM (conversation)
