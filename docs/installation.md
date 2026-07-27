@@ -29,7 +29,7 @@ export SETTINGS_MASTER_KEY="$(openssl rand -hex 32)"
 docker run -d --name leticia -p 80:80 \
   -e SETTINGS_MASTER_KEY="$SETTINGS_MASTER_KEY" \
   -v leticia_data:/app/data \
-  ghcr.io/jacetheblu/leticia:latest
+  ghcr.io/letic-ia/leticia:latest
 ```
 
 Le volume `leticia_data` conserve la base SQLite entre les redémarrages. Le
@@ -40,7 +40,7 @@ Avec **Docker Compose** :
 ```yaml
 services:
   leticia:
-    image: ghcr.io/jacetheblu/leticia:latest
+    image: ghcr.io/letic-ia/leticia:latest
     ports:
       - "80:80"
     environment:
@@ -61,7 +61,7 @@ docker compose up -d
 Prérequis : Python 3.11+.
 
 1. Téléchargez `leticia-<version>-no-docker.tar.gz` depuis la page des
-   [releases GitHub](https://github.com/JaceTheBlu/leticia/releases) et
+   [releases GitHub](https://github.com/Letic-ia/leticia/releases) et
    décompressez-la.
 2. Installez les dépendances et lancez :
 
@@ -82,7 +82,7 @@ ou accordez la capacité une fois : `sudo setcap 'cap_net_bind_service=+ep'
 Pour un poste Windows sans Python ni Docker.
 
 1. Téléchargez l'installeur `.exe` depuis les
-   [releases GitHub](https://github.com/JaceTheBlu/leticia/releases).
+   [releases GitHub](https://github.com/Letic-ia/leticia-release/releases).
 2. Lancez-le : l'application s'installe et démarre, avec une icône dans la barre
    système pour l'ouvrir ou la quitter.
 3. Au premier lancement, la `SETTINGS_MASTER_KEY` est générée automatiquement et
@@ -101,7 +101,7 @@ systemd, démarré au boot.
 Prérequis : systemd.
 
 1. Téléchargez `leticia-<version>-linux-x86_64.tar.gz` depuis les
-   [releases GitHub](https://github.com/JaceTheBlu/leticia/releases) et
+   [releases GitHub](https://github.com/Letic-ia/leticia-release/releases) et
    décompressez-la.
 2. Installez :
 
@@ -126,7 +126,7 @@ Pour un Mac, en barre de menus (pas d'icône dans le Dock).
 Prérequis : Apple Silicon (M1 ou plus récent).
 
 1. Téléchargez `leticia-<version>-macos-arm64.dmg` depuis les
-   [releases GitHub](https://github.com/JaceTheBlu/leticia/releases), ouvrez-le
+   [releases GitHub](https://github.com/Letic-ia/leticia-release/releases), ouvrez-le
    et glissez Leticia dans Applications.
 2. Premier lancement : clic droit (ou Ctrl+clic) sur Leticia.app puis "Ouvrir",
    et confirmez - l'application n'est pas signée par un certificat Apple, cette
