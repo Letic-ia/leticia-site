@@ -1,5 +1,4 @@
 ---
-sidebar_position: 12
 title: RGPD & données personnelles
 ---
 
@@ -33,11 +32,11 @@ En tant qu'exploitant, vous êtes le **responsable de traitement** : adaptez ces
 | **Journal / logs techniques** | fonctionnement de l'app | fichiers locaux + Journal |
 
 Tout est stocké **localement** (base SQLite sur votre machine ou serveur), y
-compris dans les [sauvegardes](./sauvegarde). Les clés API sont chiffrées.
+compris dans les [sauvegardes](/docs/sauvegarde). Les clés API sont chiffrées.
 
 ## Le point sensible : où va l'audio des joueurs
 
-Selon le **provider** que vous configurez ([Providers & IA locale](./providers-ia)) :
+Selon le **provider** que vous configurez ([Providers & IA locale](/docs/providers-ia)) :
 
 - **100 % local** (LLM + STT + TTS sur votre machine ou votre réseau) : l'audio
   et les transcriptions **ne quittent jamais** vos équipements. C'est l'option
@@ -60,7 +59,7 @@ en conformité : rien ne sort de vos murs.
   a lieu et que leur voix est traitée. Recueillez leur accord.
 - **Minimisation** : ne conservez pas les sessions plus longtemps que
   nécessaire. Leticia permet de **réinitialiser** une salle et de **supprimer**
-  des données ; ajustez la [rétention des sauvegardes](./sauvegarde).
+  des données ; ajustez la [rétention des sauvegardes](/docs/sauvegarde).
 - **Sécurité** : accès admin protégé par mot de passe, `SETTINGS_MASTER_KEY`
   conservée à part, sauvegardes stockées sur un support maîtrisé.
 - **Droits des personnes** : soyez en mesure de répondre à une demande d'accès
