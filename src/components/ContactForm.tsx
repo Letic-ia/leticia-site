@@ -85,7 +85,7 @@ export default function ContactForm(): React.ReactElement {
       {status === 'error' && (
         <p className="lt-form-error" role="alert">
           Échec de l'envoi. Réessayez, ou écrivez directement à{' '}
-          <a href="mailto:leticia@ggestin.com">leticia@ggestin.com</a>.
+          <a href="mailto:leticia@leticia-app.com">leticia@leticia-app.com</a>.
         </p>
       )}
     </form>
