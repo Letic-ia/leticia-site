@@ -64,7 +64,13 @@ const config: Config = {
         // Bare /docs has no page of its own (the docs plugin's routeBasePath
         // is /docs, but nothing lives at its root) - send it straight to the
         // actual landing doc instead of a 404.
-        redirects: [{from: '/docs', to: '/docs/intro'}],
+        redirects: [
+          {from: '/docs', to: '/docs/intro'},
+          // Mentions légales & RGPD moved out of the docs into standalone
+          // vitrine pages - keep old bookmarks/search results working.
+          {from: '/docs/rgpd', to: '/rgpd'},
+          {from: '/docs/mentions-legales', to: '/mentions-legales'},
+        ],
       },
     ],
     [
@@ -122,8 +128,8 @@ const config: Config = {
         {
           title: 'Légal',
           items: [
-            {label: 'RGPD & données personnelles', to: '/docs/rgpd'},
-            {label: 'Mentions légales', to: '/docs/mentions-legales'},
+            {label: 'RGPD & données personnelles', to: '/rgpd'},
+            {label: 'Mentions légales', to: '/mentions-legales'},
           ],
         },
       ],
