@@ -1,0 +1,50 @@
+---
+title: Accessibilité
+---
+
+# Accessibilité
+
+:::note
+Document indicatif, ne constituant pas une déclaration d'accessibilité au
+sens réglementaire (RGAA). Ce site vitrine est édité par un entrepreneur
+individuel et n'est pas soumis à l'obligation légale d'accessibilité, mais
+nous visons une bonne conformité par bonne pratique.
+:::
+
+## Niveau visé
+
+Ce site vise la conformité **WCAG 2.1 niveau AA**. Le niveau AAA (contraste
+renforcé à 7:1, entre autres critères) a été testé et écarté : il échoue
+largement sur du texte de lecture courant sans refonte complète de la charte
+graphique - le viser sincèrement aurait demandé de sacrifier la lisibilité
+ailleurs.
+
+## Ce qui a été fait
+
+- **Audit automatisé** avec [axe-core](https://github.com/dequelabs/axe-core)
+  (règles WCAG 2.0/2.1, niveaux A et AA) sur les pages principales : accueil,
+  mentions légales, RGPD, documentation, recherche, page 404 - en thème clair
+  et en thème sombre.
+- **Corrections apportées** suite à cet audit : contraste du bouton d'action
+  principal et des liens actifs en thème sombre, contraste de la coloration
+  syntaxique des blocs de code, liens en texte non distinguables sans la
+  couleur (ajout d'un soulignement), indice clavier de la recherche peu
+  lisible, et une animation d'apparition au défilement qui pouvait laisser
+  une section entière invisible selon la hauteur d'écran.
+- **Dernier audit** : 29 juillet 2026, 0 violation détectée (A/AA) sur les
+  pages testées, dans les deux thèmes.
+
+## Limites
+
+Un outil automatisé comme axe-core détecte une partie réelle mais partielle
+des critères WCAG (contrastes, attributs manquants, structure...) : il ne
+remplace pas une revue manuelle complète (navigation clavier exhaustive,
+pertinence des textes alternatifs, cohérence pour un lecteur d'écran,
+etc.). Cette page reflète un audit automatisé sérieux, pas une certification
+professionnelle.
+
+## Signaler un problème
+
+Si une partie du site vous pose un problème d'accessibilité, écrivez-nous à
+[leticia@leticia-app.com](mailto:leticia@leticia-app.com) - avec la page
+concernée et si possible la technologie d'assistance utilisée.

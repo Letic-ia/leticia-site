@@ -32,6 +32,15 @@
   --ifm-background-color: #0b0e17;
   --ifm-background-surface-color: #11151f;
   --ifm-navbar-background-color: rgba(11, 14, 23, 0.85);
+
+  /* --ifm-color-primary itself can't satisfy both of its dark-theme uses at
+     once: as active-menu/breadcrumb text on the dark sidebar it needs to be
+     lighter for contrast, but as the navbar-cta button's background under
+     white text it needs to stay darker (see the accessibility audit at
+     /accessibilite). Give text-on-dark its own lighter shade here instead of
+     touching the base token; the button gets its own override below. */
+  --ifm-menu-color-active: #d76655;
+  --ifm-breadcrumb-color-active: #d76655;
 }
 
 /* One-page navigation: smooth scroll to the landing sections (disabled when the
@@ -58,6 +67,16 @@ html {
 .navbar-cta:hover {
   background: var(--ifm-color-primary-dark);
 }
+/* White-on-primary fails WCAG AA in dark mode (4.3:1) since the dark-theme
+   primary is lightened for contrast against dark backgrounds elsewhere - the
+   opposite of what a white-text button needs. Use the darker step instead,
+   just for this button. */
+[data-theme='dark'] .navbar-cta {
+  background: var(--ifm-color-primary-dark);
+}
+[data-theme='dark'] .navbar-cta:hover {
+  background: var(--ifm-color-primary-darker);
+}
 
 /* Docs pages already show the section context (sidebar, breadcrumbs): drop
    the "Leticia" navbar text there and keep just the logo mark. The vitrine
@@ -66,4 +85,28 @@ html {
    no client-side JS. */
 html.plugin-docs .navbar__title {
   display: none;
+}
+
+/* Accessibility fixes (WCAG 2.1 AA) - see /accessibilite for the audit this
+   addresses. */
+
+/* The local-search plugin's "Ctrl K" navbar hint uses Infima's placeholder-
+   color token, which fails contrast (~1.5:1) against its own hint background
+   in both themes. The [class*=] selector survives the plugin's CSS-module
+   hash suffix across builds. */
+kbd[class*='searchHint'] {
+  color: var(--ifm-color-emphasis-700);
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+/* Prose links (docs pages via .markdown, standalone pages like /rgpd and
+   /mentions-legales via the bare <article> wrapper) rely on the accent color
+   alone to read as links - insufficient contrast against body text for some
+   readers, and imperceptible without color vision. An underline satisfies
+   WCAG 1.4.1 (Use of Color) independently of the color pairing. */
+.markdown a,
+article a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  text-underline-offset: 2px;
 }
