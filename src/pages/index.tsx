@@ -314,6 +314,26 @@ export default function Home(): ReactNode {
       });
     }
 
+    // Scroll-reveal safety net: the CSS `.lt-reveal` entry animation (see
+    // landing.css) never progresses for an element already intersecting the
+    // viewport at first paint - there's no scroll to "enter" from, so it gets
+    // stuck at the animation's `from` keyframe (opacity: 0), permanently
+    // invisible on any viewport short enough to show the first section or two
+    // without scrolling. The hero itself is excluded in CSS, but everything
+    // below it is viewport-height-dependent, so it can't be guarded statically.
+    // One-time check at mount: anything already on screen skips the animation
+    // outright and simply renders visible, same as its post-reveal end state.
+    if (!reduce) {
+      for (const el of root.querySelectorAll<HTMLElement>('.lt-reveal')) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.style.animation = 'none';
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        }
+      }
+    }
+
     return () => cleanups.forEach((fn) => fn());
   }, []);
 

@@ -4,6 +4,25 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+// prism-react-renderer renders each token's color as an inline style, so a
+// CSS override would need `!important` to win - patching the theme object
+// itself is cleaner. Two of the stock "github" theme's colors fail WCAG AA
+// against the theme's own code-block background (#f6f8fa): atrule/keyword/
+// attr-name/selector at 2.7:1, and string/attr-value at 4.3:1. Swap in
+// slightly darker shades of the same hues (4.9:1 / 5.3:1), everything else
+// untouched.
+const ACCESSIBLE_TOKEN_COLORS: Record<string, string> = {
+  atrule: '#0969da',
+  string: '#c8106a',
+};
+const accessibleGithubPrismTheme = {
+  ...prismThemes.github,
+  styles: prismThemes.github.styles.map((style) => {
+    const fix = Object.entries(ACCESSIBLE_TOKEN_COLORS).find(([type]) => style.types.includes(type));
+    return fix ? {...style, style: {...style.style, color: fix[1]}} : style;
+  }),
+};
+
 const config: Config = {
   title: 'Leticia',
   tagline: "Interrogatoires narratifs assistés par IA pour l'escape game",
@@ -130,13 +149,14 @@ const config: Config = {
           items: [
             {label: 'RGPD & données personnelles', to: '/rgpd'},
             {label: 'Mentions légales', to: '/mentions-legales'},
+            {label: 'Accessibilité : WCAG 2.1 AA', to: '/accessibilite'},
           ],
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Leticia.`,
     },
     prism: {
-      theme: prismThemes.github,
+      theme: accessibleGithubPrismTheme,
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
