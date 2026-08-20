@@ -15,8 +15,7 @@ par Leticia (Ollama / llama.cpp, vLLM, whisper.cpp, Piper) sur des cartes
 graphiques grand public, puis les traduit en nombre de salles simultanées.
 Les chiffres sont des **ordres de grandeur** relevés en août 2026 (sources en
 bas de page) : la vitesse varie avec les pilotes, la longueur de contexte et
-la quantisation. La [méthode pour mesurer sur *votre*
-configuration](#valider-sur-votre-configuration) est en fin de page.
+la quantisation.
 
 ## Ce qu'un tour de jeu consomme
 
@@ -100,25 +99,6 @@ Recommandations indicatives, avec un 7-8B Q4 + whisper :
 | 1 à 3 | RTX 3060 12 Go (ou RTX 4060 8 Go avec whisper small) |
 | 3 à 5 | RTX 4070 12 Go, ou 3060 + vLLM |
 | 6 et plus, ou modèle 14B | RTX 3090 / 4090 24 Go, vLLM conseillé |
-
-## Valider sur votre configuration
-
-Ces chiffres servent à présélectionner le matériel, pas à remplacer la
-mesure :
-
-1. **Le harness de benchmark** du dépôt `leticia` (`benchmark/`) rejoue des
-   parties complètes (STT → LLM → TTS) contre votre instance, avec plusieurs
-   salles simulées en parallèle, et sort les latences p50/p95/p99 par
-   segment. Étiquetez chaque run (`--label rtx3060-qwen3-4b`) pour comparer
-   les configurations.
-2. **L'export analytique** de l'application (Analyses → Export CSV)
-   enregistre les mêmes latences par segment en conditions réelles.
-3. Trois réglages de l'application pèsent directement sur la latence
-   perçue : le **préchauffage à la sélection du personnage**
-   (`Préchauffage IA`, à activer avec un serveur local), le **plafond
-   d'historique** (moins de messages renvoyés = premier token plus rapide)
-   et le **streaming** (activé par défaut : le personnage parle dès la
-   première phrase).
 
 ## Sources
 
