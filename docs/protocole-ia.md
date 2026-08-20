@@ -1,5 +1,4 @@
 ---
-sidebar_position: 5.5
 title: Protocole IA (référence technique)
 ---
 

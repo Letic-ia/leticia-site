@@ -1,5 +1,4 @@
 ---
-sidebar_position: 5.7
 title: Dimensionner le matériel IA
 ---
 
