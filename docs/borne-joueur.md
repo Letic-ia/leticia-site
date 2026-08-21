@@ -168,8 +168,15 @@ opérateur — le logiciel de salle n'a donc jamais besoin d'un mot de passe.
 | Désactiver un déclencheur | `POST /api/cogs/rooms/{id}/triggers/{trigger_id}/deactivate` |
 
 Le jeton se transmet soit en paramètre d'URL (`?token=…`), soit en en-tête
-`X-Room-Token`. Il se régénère depuis la console si besoin, ce qui invalide
-immédiatement l'ancien.
+`X-Room-Token`.
+
+Il peut être régénéré, mais c'est une opération à effet immédiat et sans
+retour en arrière : l'ancien jeton cesse aussitôt de fonctionner, et le
+logiciel de salle ne peut plus rien piloter tant que les nouvelles URLs n'y
+ont pas été recollées. Elle est donc **réservée à un administrateur**, et une
+fenêtre de confirmation rappelle la conséquence avant d'agir. Un opérateur
+non administrateur voit toujours les URLs (il en a besoin pour installer
+l'intégration) mais pas le bouton de régénération.
 
 Les **déclencheurs** sont ce qui rend l'intégration intéressante : quand la
 salle signale qu'une énigme est résolue, activer le déclencheur correspondant
