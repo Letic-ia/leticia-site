@@ -78,10 +78,24 @@ proportionnel à la durée audio, seule la parole utile est facturée au GPU.
 
 ## Combien de salles simultanées sur une carte ?
 
-Calcul de coin de table : un tour vocal occupe le GPU environ **2 à 3,5 s**
-(~0,5-1 s de STT + 1,5-2,5 s de LLM), et une salle produit un tour toutes les
-30 à 60 s. Les collisions entre salles restent donc rares jusqu'à 3-4 salles
-sur une seule file ; au-delà, deux leviers :
+:::warning Chiffres non mesurés en exploitation
+Le tableau ci-dessous est un **calcul de coin de table**, pas un retour du
+terrain : nous n'avons pas encore de données d'usage réelles sur plusieurs
+salles en parallèle. Les cadences de jeu varient énormément (une salle
+bavarde peut poser trois fois plus de questions qu'une autre), et le pire cas
+n'est pas la moyenne mais le moment où deux groupes parlent en même temps.
+Prévoyez de la marge, et mesurez sur votre propre installation avant de
+dimensionner un site à plusieurs salles.
+:::
+
+Le raisonnement : un tour vocal occupe le GPU environ **2 à 3,5 s** (~0,5-1 s
+de STT + 1,5-2,5 s de LLM), et une salle produit un tour toutes les 30 à 60 s.
+Sur le papier une carte tient donc plusieurs salles ; en pratique les
+questions arrivent par rafales et non à intervalles réguliers, et deux tours
+simultanés doublent l'attente perçue. D'où des recommandations
+volontairement conservatrices ci-dessous.
+
+Deux leviers quand la charge monte :
 
 - **`OLLAMA_NUM_PARALLEL`** (Ollama) traite plusieurs requêtes en parallèle
   au prix d'un débit unitaire réduit.
@@ -91,13 +105,18 @@ sur une seule file ; au-delà, deux leviers :
   du matériel plus rapide avec 10 requêtes concurrentes sur un 8B, là où
   llama.cpp garde un débit constant par requête.
 
-Recommandations indicatives, avec un 7-8B Q4 + whisper :
+Point de départ prudent, avec un 7-8B Q4 + whisper :
 
-| Salles simultanées | Carte minimum raisonnable |
+| Salles simultanées | Point de départ |
 |---|---|
-| 1 à 3 | RTX 3060 12 Go (ou RTX 4060 8 Go avec whisper small) |
-| 3 à 5 | RTX 4070 12 Go, ou 3060 + vLLM |
-| 6 et plus, ou modèle 14B | RTX 3090 / 4090 24 Go, vLLM conseillé |
+| 1 salle | RTX 3060 12 Go (RTX 4060 8 Go jouable avec whisper small) |
+| 2 salles | RTX 4070 12 Go, ou 3060 12 Go + vLLM |
+| 3 salles et plus, ou modèle 14B | RTX 3090 / 4090 24 Go, vLLM vivement conseillé |
+
+Ces seuils sont délibérément bas. Une carte encaissera sans doute davantage
+de salles que ce tableau ne l'indique ; c'est justement ce qu'il faudra
+vérifier avec des mesures réelles avant de s'engager sur une installation
+multi-salles.
 
 ## Sources
 
