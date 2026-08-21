@@ -116,8 +116,22 @@ Depuis la console, dans la salle, panneau **Configuration de la borne** :
 |---|---|
 | Couleur d'accent | Teinte du bouton, des cadres et des surlignages |
 | Image de fond | Fond d'écran, avec opacité et mode de remplissage réglables |
-| Mode de présentation | **Sous-titres** (médaillon + texte large), **Portrait** (visage dominant) ou **Voix seule** (aucun texte) |
+| Mode de présentation | **Sous-titres**, **Portrait**, **Voix seule** ou **Plein écran** (voir ci-dessous) |
 | Police des sous-titres | Choix parmi des polices système |
+
+Les quatre modes de présentation :
+
+| Mode | Écran joueur | Pour qui |
+|---|---|---|
+| **Sous-titres** | Médaillon + nom en haut, réplique en grand au centre | Salle bruyante, ou joueurs qui lisent plus qu'ils n'écoutent |
+| **Portrait** | Portrait rond centré, réplique en légende discrète | Équilibre entre visage et texte |
+| **Voix seule** | Portrait rond centré, **aucun texte** | Immersion maximale : les joueurs doivent écouter |
+| **Plein écran** | Le portrait remplit l'écran, nom en haut, sous-titres en bas | Grand écran : le suspect semble présent dans la pièce |
+
+En **plein écran**, deux dégradés assombrissent le haut et le bas de l'image
+pour que le nom et les sous-titres restent lisibles quel que soit le portrait.
+Un personnage sans portrait retombe simplement sur le fond sombre, en gardant
+la même disposition.
 
 Les polices proposées sont volontairement des **polices système** : la borne
 tourne souvent hors ligne et sa politique de sécurité bloque les hébergeurs de
