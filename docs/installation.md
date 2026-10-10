@@ -17,6 +17,11 @@ elle bascule automatiquement sur le port 8000 plutôt que de ne pas démarrer.
 `SETTINGS_MASTER_KEY` chiffre vos clés API stockées en base. Générez-en une
 solide et **conservez-la** : sans elle, une sauvegarde restaurée ne peut plus
 déchiffrer les secrets. Générer une valeur : `openssl rand -hex 32`.
+
+Si vous n'en fournissez pas, ou si vous laissez une valeur d'exemple, Leticia
+en génère une au premier démarrage et l'enregistre dans le fichier
+`master.key`, à côté de la base (dans le volume `leticia_data` avec Docker).
+Sauvegardez ce fichier avec la base.
 :::
 
 ## Option A - Docker (recommandé sur serveur)
