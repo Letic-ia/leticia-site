@@ -1,14 +1,16 @@
 import React, {useId, useState, type FormEvent} from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // Static site (GitHub Pages), no backend of its own: submissions go straight
 // to Web3Forms (https://web3forms.com), which relays them by email without
-// exposing any server-side code here. Get a free access key by entering an
-// email on their site, then paste it below before the form goes live.
-const WEB3FORMS_ACCESS_KEY = 'REMPLACER_PAR_VOTRE_CLE_WEB3FORMS';
+// exposing any server-side code here. The access key comes from the build
+// (customFields in docusaurus.config.ts); without one the form is hidden.
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
-export default function ContactForm(): React.ReactElement {
+export default function ContactForm(): React.ReactElement | null {
+  const {siteConfig} = useDocusaurusContext();
+  const accessKey = String(siteConfig.customFields?.web3formsAccessKey ?? '');
   const [status, setStatus] = useState<Status>('idle');
   const nameId = useId();
   const emailId = useId();
@@ -20,7 +22,7 @@ export default function ContactForm(): React.ReactElement {
     setStatus('sending');
     const form = event.currentTarget;
     const data = new FormData(form);
-    data.append('access_key', WEB3FORMS_ACCESS_KEY);
+    data.append('access_key', accessKey);
     data.append('subject', 'Demande de démo Leticia');
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -38,6 +40,10 @@ export default function ContactForm(): React.ReactElement {
     } catch {
       setStatus('error');
     }
+  }
+
+  if (!accessKey) {
+    return null;
   }
 
   if (status === 'success') {
