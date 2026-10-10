@@ -45,6 +45,24 @@ L'onglet **IA** regroupe, sous la **connexion principale** :
 Les réglages fins de génération (tokens, historique, streaming…) sont rangés
 sous **Options avancées**.
 
+### Plafonds de consommation
+
+Avec un fournisseur cloud, chaque question est facturée. Deux plafonds, comptés
+**par salle**, évitent une facture surprise :
+
+- **Questions par minute et par salle** (20 par défaut) : coupe une boucle,
+  par exemple un bouton de borne resté enfoncé ou un script qui s'emballe ;
+- **Tokens par heure et par salle** (désactivé par défaut) : plafonne la
+  consommation sur l'heure glissante, question et réponse comprises.
+
+Au-delà d'un plafond, l'IA n'est pas appelée : le personnage répond par la
+**réplique de repli**, la question du joueur reste dans le transcript, et un
+avertissement apparaît dans le **Journal** (et en notification dans la
+console). La valeur `0` désactive un plafond.
+
+Ces plafonds portent sur le LLM seulement : la transcription et la synthèse
+vocale ne sont pas plafonnées.
+
 :::info[Providers & IA locale]
 La liste complète des providers et des applications d'IA locale (LLM, STT, TTS,
 images) avec leurs URL de base est détaillée sur la page
