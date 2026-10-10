@@ -190,6 +190,23 @@ ne pas se contredire au tour suivant.
 Si la salle n'est reliée à aucune borne, le son est joué sur la console
 elle-même — une installation sans borne reste donc utilisable.
 
+## Suivre l'état de la borne pendant la partie
+
+Sur la page de la salle, sous **Partie en direct**, la console affiche la borne
+choisie avec un voyant :
+
+- **connectée** (vert) : la borne tient son canal de contrôle ouvert ;
+- **ne répond plus** (rouge, partie en cours) ou **hors ligne** : la borne a
+  décroché, avec l'heure à laquelle elle a été vue pour la dernière fois.
+
+Si la borne décroche en pleine partie, une **alerte** apparaît aussitôt dans
+la console, puis une seconde quand elle revient. Comptez jusqu'à une vingtaine
+de secondes entre la coupure et l'alerte.
+
+La borne signale aussi son **micro** en se connectant : si elle est ouverte en
+HTTP non sécurisé, la console l'indique en orange, avant que les joueurs ne
+s'en aperçoivent (voir [la section micro](#micro--le-blocage-http-et-comment-le-contourner)).
+
 ## En cas de souci
 
 | Symptôme | Piste |
@@ -197,4 +214,5 @@ elle-même — une installation sans borne reste donc utilisable.
 | La borne reste sur le code d'appairage | Elle n'a pas encore été validée dans Administration → Bornes |
 | « Micro indisponible » | Contexte non sécurisé : voir [la section micro](#micro--le-blocage-http-et-comment-le-contourner) |
 | La borne affiche « en attente » | Aucune partie n'est démarrée sur cette borne, ou la salle est liée à une autre |
+| La console indique « ne répond plus » | Écran en veille, navigateur fermé ou réseau coupé : rechargez la page de la borne, elle se reconnecte seule |
 | Rien ne se passe au clic sur un personnage | Vérifiez que la salle a bien des personnages participants dans son scénario |
