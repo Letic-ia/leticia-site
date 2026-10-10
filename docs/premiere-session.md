@@ -14,9 +14,21 @@ Dans **Scénarios → Nouveau scénario**, décrivez l'enquête : titre, résum�
 ## 2. Ajouter des personnages
 
 Depuis la page du scénario, ajoutez les **personnages** à interroger. Pour
-chacun : nom, rôle, personnalité, âge, ce qu'il sait, ce qu'il cache. Ces
-éléments guident les réponses de l'IA et l'empêchent de divulguer ce qu'il ne
-devrait pas.
+chacun : nom, rôle, personnalité, âge.
+
+Remplissez ensuite sa **fiche secrets** (panneau « Secrets des personnages » de
+la page du scénario) :
+
+- **Ce qu'il sait** : les faits qu'il peut raconter.
+- **Ce qu'il cache** : ce qu'il ne dira jamais de lui-même.
+- **Révélations** (jusqu'à 8) : ce qu'il finit par avouer, et à quelle
+  condition. Avec des **mots-clés**, il lâche le secret dès qu'un joueur a
+  prononcé l'un d'eux (majuscules et accents ignorés, « gardien » couvre aussi
+  « gardienne »). Avec un **déclencheur**, il le lâche quand vous activez ce
+  déclencheur dans la salle. Sans condition, il ne cède que si on le presse
+  vraiment.
+
+Une fois débloquée, une révélation le reste jusqu'à la fin de la partie.
 
 Vous pouvez aussi générer un **portrait** du personnage.
 

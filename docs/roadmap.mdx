@@ -12,7 +12,7 @@ est indicative et évolue selon les retours.
 <div className={styles.board}>
 
 <section className={styles.column} style={{'--accent': 'var(--ifm-color-success)'}}>
-  <h2 className={styles.columnTitle}>✅ Disponible <span className={styles.count}>10</span></h2>
+  <h2 className={styles.columnTitle}>✅ Disponible <span className={styles.count}>14</span></h2>
   <ul className={styles.cards}>
     <li className={styles.card}><strong>Interrogatoire vocal complet</strong>transcription → réponse IA en rôle → synthèse vocale</li>
     <li className={styles.card}>Scénarios, personnages, déclencheurs narratifs et console opérateur</li>
@@ -24,24 +24,30 @@ est indicative et évolue selon les retours.
     <li className={styles.card}>Comptes et rôles (administrateur / opérateur)</li>
     <li className={styles.card}>Réseau local et déploiement Docker / archive / installeur Windows</li>
     <li className={styles.card}>Documentation d'installation et d'exploitation</li>
+    <li className={styles.card}><strong>Borne joueur</strong>écran dédié aux joueurs dans la salle : choix du personnage (tactile ou badge RFID), question en push-to-talk, réponse parlée dès la première phrase, portrait, sous-titres, thème par scénario, plein écran</li>
+    <li className={styles.card}><strong>Intervention du maître du jeu</strong>faire parler un personnage depuis la console, en direct pendant la partie</li>
+    <li className={styles.card}><strong>Logiciel de salle</strong>démarrage, arrêt et déclencheurs pilotés par votre logiciel de salle (COGS ou équivalent)</li>
+    <li className={styles.card}>Voix par personnage et interface en français ou en anglais</li>
   </ul>
 </section>
 
 <section className={styles.column} style={{'--accent': 'var(--ifm-color-warning)'}}>
-  <h2 className={styles.columnTitle}>🚧 En cours <span className={styles.count}>1</span></h2>
+  <h2 className={styles.columnTitle}>🚧 En cours <span className={styles.count}>3</span></h2>
   <ul className={styles.cards}>
-    <li className={styles.card}><strong>Mode Jeu - borne joueur</strong>écran plein écran dédié aux joueurs sur une borne de la salle : choix du personnage à interroger (badge RFID ou tactile), conversation en push-to-talk, affichage thématisé (portrait, état de l'IA, sous-titres)</li>
+    <li className={styles.card}><strong>Maîtrise des coûts IA</strong>plafonds par salle pour qu'un fournisseur cloud ne réserve pas de surprise sur la facture</li>
+    <li className={styles.card}><strong>État de la borne en direct</strong>le maître du jeu voit depuis la console si la borne est connectée, et est alerté si elle décroche</li>
+    <li className={styles.card}><strong>Secrets des personnages</strong>ce que chaque suspect sait, cache, et peut avouer sous conditions, pour des interrogatoires plus justes</li>
   </ul>
 </section>
 
 <section className={styles.column} style={{'--accent': 'var(--ifm-color-info)'}}>
   <h2 className={styles.columnTitle}>🔭 À l'étude <span className={styles.count}>5</span></h2>
   <ul className={styles.cards}>
+    <li className={styles.card}>Effets en salle déclenchés par l'interrogatoire (un aveu ouvre un cadenas)</li>
     <li className={styles.card}>Génération de scénarios assistée par IA</li>
-    <li className={styles.card}>Voix personnalisées par personnage</li>
-    <li className={styles.card}>Intervention de l'opérateur en direct pendant une session</li>
-    <li className={styles.card}>Mode multi-équipes</li>
-    <li className={styles.card}>Interface multi-langue</li>
+    <li className={styles.card}>Parties en anglais ou dans d'autres langues</li>
+    <li className={styles.card}>Plusieurs bornes par salle et mode multi-équipes</li>
+    <li className={styles.card}>Voix sur mesure</li>
   </ul>
 </section>
 
