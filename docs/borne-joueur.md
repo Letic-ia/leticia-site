@@ -50,7 +50,7 @@ C'est le point qui bloque le plus souvent une installation.
 
 Les navigateurs ne donnent accès au **micro** que dans un *contexte sécurisé* :
 HTTPS, ou `http://localhost`. Or une borne sur le réseau local atteint le
-serveur par une adresse du type `http://192.168.1.42` — donc en HTTP simple, sur
+serveur par une adresse du type `http://192.168.1.42`, donc en HTTP simple, sur
 une IP. Résultat : **l'API micro n'existe même pas**, le navigateur ne propose
 jamais l'autorisation, et la borne signale que le micro est indisponible.
 
@@ -157,7 +157,12 @@ La borne n'est pas le seul moyen de piloter une partie : le **logiciel de salle*
 
 Chaque salle possède son **jeton de webhook**, visible dans la salle, onglet
 **Intégrations**. Les appels s'authentifient avec ce jeton, pas avec le compte
-opérateur — le logiciel de salle n'a donc jamais besoin d'un mot de passe.
+opérateur : le logiciel de salle n'a donc jamais besoin d'un mot de passe.
+
+Ce jeton suffit à lancer, arrêter ou réinitialiser la salle et à basculer ses
+déclencheurs. Il est donc **réservé aux administrateurs** : un opérateur non
+administrateur ne voit pas l'onglet **Intégrations**, et c'est un
+administrateur qui installe l'intégration dans le logiciel de salle.
 
 | Action | Appel |
 |---|---|
@@ -173,10 +178,8 @@ Le jeton se transmet soit en paramètre d'URL (`?token=…`), soit en en-tête
 Il peut être régénéré, mais c'est une opération à effet immédiat et sans
 retour en arrière : l'ancien jeton cesse aussitôt de fonctionner, et le
 logiciel de salle ne peut plus rien piloter tant que les nouvelles URLs n'y
-ont pas été recollées. Elle est donc **réservée à un administrateur**, et une
-fenêtre de confirmation rappelle la conséquence avant d'agir. Un opérateur
-non administrateur voit toujours les URLs (il en a besoin pour installer
-l'intégration) mais pas le bouton de régénération.
+ont pas été recollées. Une fenêtre de confirmation rappelle cette conséquence
+avant d'agir.
 
 Les **déclencheurs** sont ce qui rend l'intégration intéressante : quand la
 salle signale qu'une énigme est résolue, activer le déclencheur correspondant
@@ -195,7 +198,7 @@ ce qui est voulu : l'IA doit savoir ce que le joueur a réellement entendu pour
 ne pas se contredire au tour suivant.
 
 Si la salle n'est reliée à aucune borne, le son est joué sur la console
-elle-même — une installation sans borne reste donc utilisable.
+elle-même : une installation sans borne reste donc utilisable.
 
 ## Suivre l'état de la borne pendant la partie
 
