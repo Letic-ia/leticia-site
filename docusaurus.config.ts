@@ -28,6 +28,15 @@ const config: Config = {
   tagline: "Interrogatoires narratifs assistés par IA pour l'escape game",
   favicon: 'img/favicon.ico',
 
+  // Clé Web3Forms du formulaire de contact, fournie au build (secret
+  // WEB3FORMS_ACCESS_KEY du workflow de déploiement). Elle finit dans le
+  // bundle et c'est voulu : elle désigne une boîte de réception, elle
+  // n'autorise rien d'autre. Vide, le formulaire est masqué et seul le lien
+  // email reste.
+  customFields: {
+    web3formsAccessKey: process.env.WEB3FORMS_ACCESS_KEY ?? '',
+  },
+
   future: {
     v4: true,
   },
