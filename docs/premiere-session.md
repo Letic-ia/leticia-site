@@ -28,7 +28,9 @@ la page du scénario) :
   déclencheur dans la salle. Sans condition, il ne cède que si on le presse
   vraiment.
 
-Une fois débloquée, une révélation le reste jusqu'à la fin de la partie.
+Une fois débloquée, une révélation le reste jusqu'à la fin de la partie. Elle
+peut aussi déclencher un effet dans la salle (un cadenas qui s'ouvre, un son) :
+voir [l'aveu qui ouvre le cadenas](borne-joueur#laveu-qui-ouvre-le-cadenas).
 
 Vous pouvez aussi générer un **portrait** du personnage.
 
