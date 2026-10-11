@@ -186,6 +186,83 @@ salle signale qu'une énigme est résolue, activer le déclencheur correspondant
 change ce que les personnages savent ou acceptent de dire, sans que le maître
 du jeu ait à intervenir.
 
+### Dans l'autre sens : Leticia prévient le logiciel de salle
+
+Leticia peut aussi **appeler** le logiciel de salle quand quelque chose se
+passe dans l'interrogatoire : c'est ce qui permet qu'un aveu du suspect ouvre
+un cadenas, allume une lumière ou lance un son.
+
+Cela se règle dans la même section, onglet **Intégrations**, partie
+**Événements sortants**, toujours par un administrateur. Chaque **règle**
+associe un événement à une URL que le logiciel de salle sait recevoir :
+
+| Événement | Quand il part |
+|---|---|
+| Partie démarrée | Le maître du jeu (ou le logiciel de salle) lance la partie. |
+| Partie arrêtée | La partie en cours s'arrête. Arrêter une salle déjà arrêtée ne prévient personne. |
+| Salle réinitialisée | La salle est remise à zéro pour l'équipe suivante. |
+| Personnage choisi sur la borne | Les joueurs choisissent un personnage, au toucher ou par badge. |
+| Réplique du MJ | Le maître du jeu fait parler un personnage depuis la console. |
+| Révélation d'un secret | Un personnage vient de livrer un secret de sa fiche (voir ci-dessous). |
+
+Pour les trois derniers, la règle peut viser **un personnage précis** ou tous.
+Une salle accepte jusqu'à vingt règles, et plusieurs règles peuvent viser le
+même événement (un cadenas et un son, par exemple).
+
+Chaque règle choisit sa **méthode** :
+
+- **GET** : un simple appel de l'URL, sans contenu. C'est ce que la plupart
+  des logiciels de salle et des boîtiers de relais savent déclencher : une URL
+  par action.
+- **POST** : l'URL reçoit un document JSON qui décrit l'événement : `event`
+  (son nom technique, par exemple `revelation`), `room` (numéro et nom de la
+  salle), `character` (numéro et nom du personnage, pour les événements de
+  personnage), `text` (la réplique, pour une réplique du MJ), `sent_at` (date
+  et heure) et `test` (vrai pour un envoi de test). Le nom de l'événement est
+  aussi dans l'en-tête `X-Leticia-Event`.
+
+Le bouton **Tester** d'une règle envoie tout de suite un appel marqué comme
+test et affiche si le logiciel de salle l'a reçu. C'est le moyen de vérifier
+une URL sans lancer de partie.
+
+#### L'aveu qui ouvre le cadenas
+
+L'événement **Révélation d'un secret** s'appuie sur la
+[fiche secrets](premiere-session#2-ajouter-des-personnages)
+des personnages. Une règle peut viser une révélation précise : on choisit le
+personnage, puis la révélation dans la liste de sa fiche.
+
+L'événement part quand **la condition de la révélation est remplie** (les
+joueurs ont prononcé un de ses mots-clés devant ce personnage, ou son
+déclencheur est actif dans la salle) **et que le personnage a répondu** : c'est
+le moment où il a reçu le droit d'avouer. Leticia ne lit pas la réponse pour
+vérifier qu'il a vraiment avoué, elle se fie à cette condition.
+
+Quelques règles à connaître :
+
+- l'événement part **une seule fois par partie** : reposer la même question ne
+  rouvre pas un cadenas déjà ouvert. La réinitialisation de la salle remet le
+  compteur à zéro ;
+- il ne part que **pendant une partie en cours** : en répétition, salle
+  arrêtée, rien ne se déclenche (le bouton Tester sert à cela). C'est vrai
+  aussi pour la réplique du MJ ;
+- une révélation **sans condition** (que le personnage lâche quand il le juge
+  bon) ne peut pas être détectée : elle apparaît grisée dans la liste ;
+- réordonner ou réécrire les révélations d'une fiche ne casse pas les règles
+  qui les visent.
+
+:::tip
+Évitez de faire boucler les deux sens : si le logiciel de salle réinitialise
+Leticia, ne lui faites pas réinitialiser la salle en retour à la réception de
+« Salle réinitialisée ».
+:::
+
+Les appels partent en arrière-plan, dans l'ordre des événements : un logiciel
+de salle lent ou éteint ne ralentit jamais la partie. Chaque envoi, réussi ou
+non, est noté dans le **Journal** (sans les paramètres de l'URL, qui portent
+parfois une clé). Leticia ne suit pas les redirections et ne relit pas la
+réponse du logiciel de salle, seulement son code de retour.
+
 ## Faire parler un personnage depuis la console
 
 Dans la conversation avec un personnage, le bouton **mégaphone** bascule la
