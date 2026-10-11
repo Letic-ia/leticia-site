@@ -140,6 +140,45 @@ polices externes.
 Le **mode enfant**, réglé au niveau de la salle, change la façon dont les
 personnages répondent (mots simples, phrases courtes, ton bienveillant).
 
+## Langue de la partie
+
+Chaque salle se joue en **français** (par défaut) ou en **anglais**. La langue
+se choisit à la création de la salle, ou à tout moment dans l'en-tête de la
+salle, à côté du mode enfant, y compris pendant une partie : la borne suit
+d'elle-même.
+
+La langue de la partie est indépendante de celle de la console. Un maître du
+jeu qui travaille en français peut lancer une partie en anglais pour un groupe
+de touristes ; elle change :
+
+- les **réponses des personnages** : ils répondent en anglais, même si leurs
+  fiches, le scénario et les déclencheurs sont rédigés en français (inutile de
+  tout traduire) ;
+- la **transcription** de ce que disent les joueurs ;
+- l'**écran de la borne** (boutons, consignes) ;
+- le **message d'attente** et la **réplique de repli**, qui ont chacun une
+  version anglaise dans les réglages ;
+- la **voix**, si un modèle de voix anglais est configuré (voir ci-dessous).
+
+:::warning[Voix locale Piper : une voix par langue]
+Les voix des fournisseurs cloud (OpenAI, Gemini) parlent toutes les langues :
+rien à faire. Une voix **Piper** (IA locale), en revanche, ne parle qu'une
+langue : la voix française installée par défaut lirait l'anglais avec un fort
+accent. Pour des parties en anglais avec Piper, ajoutez une voix anglaise :
+
+1. téléchargez une voix anglaise depuis le dépôt
+   [Piper voices](https://huggingface.co/rhasspy/piper-voices/tree/main/en),
+   par exemple `en_US-lessac-medium` : les **deux** fichiers `.onnx` et
+   `.onnx.json` ;
+2. posez-les dans le même dossier que la voix française (le champ **Modèle TTS**
+   de l'onglet **TTS** donne son chemin) ;
+3. dans **Réglages → TTS → Options**, renseignez **Modèle TTS des parties en
+   anglais** avec le chemin complet du fichier `.onnx` anglais.
+:::
+
+La transcription locale (Whisper) n'a besoin de rien : le modèle installé est
+multilingue.
+
 ## Badges RFID
 
 Plutôt que de choisir un personnage à l'écran, les joueurs peuvent poser un
