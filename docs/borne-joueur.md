@@ -186,6 +186,58 @@ salle signale qu'une énigme est résolue, activer le déclencheur correspondant
 change ce que les personnages savent ou acceptent de dire, sans que le maître
 du jeu ait à intervenir.
 
+### Prévenir le logiciel de salle de ce qui se passe
+
+L'intégration marche aussi dans l'autre sens : Leticia peut **prévenir** le
+logiciel de salle à chaque événement de la partie, pour qu'il ouvre un
+cadenas, lance un son ou allume une lumière.
+
+Dans l'onglet **Intégrations** de la salle, section **Événements envoyés au
+logiciel de salle**, collez l'adresse que votre logiciel de salle écoute, puis
+**Enregistrer l'URL**. Le bouton **Envoyer un test** envoie aussitôt un
+événement d'essai et affiche la réponse : « Reçu par le logiciel de salle »
+si tout va bien, sinon la raison de l'échec. Laisser le champ vide coupe
+l'envoi.
+
+| Événement | Quand |
+|---|---|
+| `game_started` | La partie est lancée (console ou logiciel de salle) |
+| `game_stopped` | La partie est arrêtée |
+| `room_reset` | La salle est réinitialisée |
+| `character_selected` | Les joueurs choisissent un personnage sur la borne (tactile ou badge) |
+| `gm_line` | Le maître du jeu fait parler un personnage depuis la console |
+| `test` | Bouton **Envoyer un test** |
+
+Chaque événement est une requête `POST` dont le corps JSON donne le nom de
+l'événement, la salle, l'heure et, selon le cas, le personnage concerné ou le
+texte de la réplique :
+
+```json
+{
+  "event": "character_selected",
+  "room_id": 3,
+  "room_name": "Le manoir",
+  "occurred_at": "2026-10-11T20:45:12+00:00",
+  "data": { "character_id": 7, "character_name": "Édouard Marchal" }
+}
+```
+
+Si votre logiciel de salle ne sait réagir qu'à une adresse, sans lire le
+contenu, mettez `{event}` dans l'URL : chaque événement arrive alors sur sa
+propre adresse, par exemple
+`http://logiciel-de-salle.local:8080/leticia/{event}` devient
+`…/leticia/character_selected`.
+
+Bon à savoir :
+
+- L'envoi ne ralentit jamais la partie : il part en arrière-plan, dans l'ordre
+  des événements. S'il échoue (logiciel de salle éteint, mauvaise adresse), il
+  n'est pas renvoyé, et l'échec est noté dans le **Journal**.
+- Le jeton de la salle n'est jamais envoyé.
+- Comme le jeton, ce réglage est **réservé aux administrateurs**.
+- Pas encore d'événement « aveu » : savoir qu'un personnage vient de livrer un
+  secret de sa fiche est à l'étude.
+
 ## Faire parler un personnage depuis la console
 
 Dans la conversation avec un personnage, le bouton **mégaphone** bascule la
