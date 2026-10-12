@@ -143,8 +143,8 @@ personnages répondent (mots simples, phrases courtes, ton bienveillant).
 ## Langue de la partie
 
 Chaque salle se joue en **français** (par défaut) ou en **anglais**. La langue
-se choisit à la création de la salle, ou à tout moment dans l'en-tête de la
-salle, à côté du mode enfant, y compris pendant une partie : la borne suit
+se choisit à la création de la salle, ou au lancement de la partie, à côté du
+choix de la borne. Elle reste modifiable pendant la partie : la borne suit
 d'elle-même.
 
 La langue de la partie est indépendante de celle de la console. Un maître du
