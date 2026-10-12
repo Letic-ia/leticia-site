@@ -27,10 +27,10 @@ la page du scénario) :
   « gardienne »). Avec un **déclencheur**, il le lâche quand vous activez ce
   déclencheur dans la salle. Sans condition, il ne cède que si on le presse
   vraiment.
-- **Pendant les déclencheurs** : ajoutez seulement les déclencheurs qui le
-  concernent (« Ajouter un déclencheur »), et pour chacun, comment il change
-  quand celui-ci est actif (« tu entends les sirènes, tu deviens nerveux »).
-  La corbeille retire un déclencheur de sa fiche, pas du scénario.
+- **Comportements** : comment il change pendant la partie. « Selon un
+  déclencheur » ajoute la consigne à suivre quand ce déclencheur est actif
+  (« tu entends les sirènes, tu deviens nerveux »). La corbeille retire le
+  comportement de sa fiche, pas le déclencheur du scénario.
 - **Actions** (jusqu'à 8) : ce qu'il fait dans la salle, par exemple « quand
   on lui parle du coffre, il ouvre le sien ». Une action part quand les joueurs
   prononcent un de ses mots-clés devant lui, ou dès qu'une de ses révélations
@@ -39,6 +39,12 @@ la page du scénario) :
   [les actions](borne-joueur#les-actions-des-personnages).
 
 Une fois débloquée, une révélation le reste jusqu'à la fin de la partie.
+
+Pour des enchaînements plus fins (un aveu qui n'arrive qu'après un autre, une
+étape qui dépend d'un autre personnage), le bouton **Voir en graphe** ouvre
+tout le scénario en blocs et en flèches : voir
+[le graphe du scénario](graphe-scenario). Une condition réglée là s'affiche
+dans la fiche comme une phrase, « Réglé dans le graphe ».
 
 Vous pouvez aussi générer un **portrait** du personnage.
 
@@ -50,7 +56,8 @@ Ils se créent au niveau du scénario avec un nom et une description, et
 s'activent en direct depuis la salle.
 
 Un déclencheur ne dit rien par lui-même : ce que chaque personnage fait quand
-il est actif se règle dans **sa fiche**, partie « Pendant les déclencheurs ».
+il est actif se règle dans **sa fiche** (partie « Comportements ») ou dans
+le [graphe du scénario](graphe-scenario).
 Tout ce que dit ou fait un personnage se trouve ainsi au même endroit. La liste
 des déclencheurs indique chez quels personnages chacun est réglé, et supprimer
 un déclencheur retire aussi ces réglages, après confirmation.
