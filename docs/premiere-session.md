@@ -27,19 +27,32 @@ la page du scénario) :
   « gardienne »). Avec un **déclencheur**, il le lâche quand vous activez ce
   déclencheur dans la salle. Sans condition, il ne cède que si on le presse
   vraiment.
+- **Pendant les déclencheurs** : pour chaque déclencheur du scénario, comment
+  il change quand celui-ci est actif (« tu entends les sirènes, tu deviens
+  nerveux »). Laissez vide s'il n'est pas concerné.
+- **Actions** (jusqu'à 8) : ce qu'il fait dans la salle, par exemple « quand
+  on lui parle du coffre, il ouvre le sien ». Une action part quand les joueurs
+  prononcent un de ses mots-clés devant lui, ou dès qu'une de ses révélations
+  est débloquée. Le personnage l'annonce dans sa réponse, puis Leticia prévient
+  le logiciel de salle, qui ouvre le cadenas ou lance le son : voir
+  [les actions](borne-joueur#les-actions-des-personnages).
 
-Une fois débloquée, une révélation le reste jusqu'à la fin de la partie. Elle
-peut aussi déclencher un effet dans la salle (un cadenas qui s'ouvre, un son) :
-voir [l'aveu qui ouvre le cadenas](borne-joueur#laveu-qui-ouvre-le-cadenas).
+Une fois débloquée, une révélation le reste jusqu'à la fin de la partie.
 
 Vous pouvez aussi générer un **portrait** du personnage.
 
 ## 3. Déclencheurs (optionnel)
 
-Les **déclencheurs** sont des événements narratifs que l'opérateur active
-pendant la session (un indice révélé, un personnage qui devient coopératif…).
-Ils se définissent au niveau du scénario et s'activent en direct depuis la
-salle.
+Les **déclencheurs** sont des interrupteurs que l'opérateur, ou le logiciel de
+salle, allume pendant la session (la police arrive, un indice est trouvé…).
+Ils se créent au niveau du scénario avec un nom et une description, et
+s'activent en direct depuis la salle.
+
+Un déclencheur ne dit rien par lui-même : ce que chaque personnage fait quand
+il est actif se règle dans **sa fiche**, partie « Pendant les déclencheurs ».
+Tout ce que dit ou fait un personnage se trouve ainsi au même endroit. La liste
+des déclencheurs indique chez quels personnages chacun est réglé, et supprimer
+un déclencheur retire aussi ces réglages, après confirmation.
 
 ## 4. Lancer une salle
 
