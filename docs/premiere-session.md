@@ -27,9 +27,10 @@ la page du scénario) :
   « gardienne »). Avec un **déclencheur**, il le lâche quand vous activez ce
   déclencheur dans la salle. Sans condition, il ne cède que si on le presse
   vraiment.
-- **Pendant les déclencheurs** : pour chaque déclencheur du scénario, comment
-  il change quand celui-ci est actif (« tu entends les sirènes, tu deviens
-  nerveux »). Laissez vide s'il n'est pas concerné.
+- **Pendant les déclencheurs** : ajoutez seulement les déclencheurs qui le
+  concernent (« Ajouter un déclencheur »), et pour chacun, comment il change
+  quand celui-ci est actif (« tu entends les sirènes, tu deviens nerveux »).
+  La corbeille retire un déclencheur de sa fiche, pas du scénario.
 - **Actions** (jusqu'à 8) : ce qu'il fait dans la salle, par exemple « quand
   on lui parle du coffre, il ouvre le sien ». Une action part quand les joueurs
   prononcent un de ses mots-clés devant lui, ou dès qu'une de ses révélations
