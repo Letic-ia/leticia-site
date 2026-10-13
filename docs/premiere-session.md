@@ -40,11 +40,9 @@ la page du scénario) :
 
 Une fois débloquée, une révélation le reste jusqu'à la fin de la partie.
 
-Pour des enchaînements plus fins (un aveu qui n'arrive qu'après un autre, une
-étape qui dépend d'un autre personnage), le bouton **Voir en graphe** ouvre
-tout le scénario en blocs et en flèches : voir
-[le graphe du scénario](graphe-scenario). Une condition réglée là s'affiche
-dans la fiche comme une phrase, « Réglé dans le graphe ».
+Pour voir d'un coup d'œil ce que fait chaque personnage à chaque déclencheur,
+le bouton **Consignes et famille** ouvre le tableau des consignes et l'arbre
+généalogique : voir [consignes et famille](consignes-et-famille).
 
 Vous pouvez aussi générer un **portrait** du personnage.
 
@@ -57,7 +55,7 @@ s'activent en direct depuis la salle.
 
 Un déclencheur ne dit rien par lui-même : ce que chaque personnage fait quand
 il est actif se règle dans **sa fiche** (partie « Comportements ») ou dans
-le [graphe du scénario](graphe-scenario).
+le [tableau des consignes](consignes-et-famille).
 Tout ce que dit ou fait un personnage se trouve ainsi au même endroit. La liste
 des déclencheurs indique chez quels personnages chacun est réglé, et supprimer
 un déclencheur retire aussi ces réglages, après confirmation.
