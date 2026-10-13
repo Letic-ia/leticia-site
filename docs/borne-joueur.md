@@ -179,6 +179,14 @@ accent. Pour des parties en anglais avec Piper, ajoutez une voix anglaise :
 La transcription locale (Whisper) n'a besoin de rien : le modèle installé est
 multilingue.
 
+:::tip[Mots-clés des fiches en partie anglaise]
+Les mots-clés des fiches (révélations, comportements, actions) sont comparés
+à ce que disent les joueurs, tels quels. Des joueurs anglophones ne diront pas
+« couteau » mais « knife » : pour un scénario joué dans les deux langues,
+ajoutez les mots anglais à côté des mots français (« couteau, knife »). Le
+reste de la fiche peut rester en français.
+:::
+
 ## Badges RFID
 
 Plutôt que de choisir un personnage à l'écran, les joueurs peuvent poser un
