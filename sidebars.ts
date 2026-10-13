@@ -30,7 +30,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Exploitation',
-      items: ['sauvegarde', 'mise-a-jour', 'exploitation-avancee'],
+      items: ['piloter-les-salles', 'statistiques', 'sauvegarde', 'mise-a-jour', 'exploitation-avancee'],
     },
     'roadmap',
   ],

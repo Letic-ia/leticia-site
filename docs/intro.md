@@ -15,7 +15,10 @@ console web.
   rôle du personnage, puis lit sa réponse à voix haute (TTS).
 - **Scénarios & personnages** : chaque enquête définit ses personnages, leur
   psychologie, leurs secrets et des déclencheurs narratifs.
-- **Console opérateur** : suivi en direct des sessions, déclencheurs, journal.
+- **Console opérateur** : toutes les salles en direct, vérification de la salle
+  avant le groupe, alerte quand un groupe tourne en rond, déclencheurs, journal.
+- **Chiffres de jeu** : parties, taux de réussite, durée, suspects les plus
+  interrogés et coût en tokens, par scénario.
 - **IA configurable** : OpenAI, Google Gemini, ou un **serveur local**
   (Ollama, LM Studio, vLLM…) compatible OpenAI.
 - **Comptes & rôles** : un administrateur configure l'instance, des opérateurs

@@ -15,6 +15,8 @@ Leticia gère des comptes locaux avec deux rôles.
 | Créer / modifier / supprimer du contenu | ✅ | ❌ |
 | Paramètres (IA, voix, providers) | ✅ | ❌ |
 | Journal | ✅ | ❌ |
+| Analytiques (chiffres de jeu et technique) | ✅ | ❌ |
+| Liste « Avant la première partie » | ✅ | ❌ |
 | Gestion des utilisateurs | ✅ | ❌ |
 
 En clair : un **utilisateur** anime les parties (c'est le game master du jour),

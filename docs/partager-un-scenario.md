@@ -62,9 +62,10 @@ Le scénario est prêt à jouer, mais ce qui dépend de votre salle reste à
 régler :
 
 1. **Créer une salle** sur ce scénario (voir [Première session](./premiere-session)).
-2. **Associer les badges** RFID aux personnages, si votre borne en utilise
-   (voir [Borne joueur](./borne-joueur)).
-3. **Renseigner les adresses des actions** dans les intégrations de la salle,
+2. **Associer les badges** RFID aux personnages, dans la section **Borne des
+   joueurs** du scénario, si votre borne en utilise (voir
+   [Borne joueur](./borne-joueur#badges-rfid)).
+3. **Renseigner les adresses des actions** dans les **Réglages de la salle**,
    si les personnages déclenchent des effets en salle.
 4. **Vérifier les voix** : une voix choisie sur l'autre installation peut ne
    pas exister chez vous si vous n'utilisez pas le même fournisseur de synthèse
