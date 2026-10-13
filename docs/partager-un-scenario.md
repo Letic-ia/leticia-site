@@ -26,6 +26,8 @@ Le fichier contient :
 - qui est coupable et qui est victime ;
 - les **déclencheurs** et la **fiche** de chaque personnage (ce qu'il sait,
   cache, avoue, ses consignes et ses actions) ;
+- le **dénouement** : accusation finale, suspects, essais et derniers mots du
+  coupable ;
 - l'apparence de la **borne** : couleur, image de fond, présentation, police.
 
 Il ne contient **rien qui soit propre à votre salle** :
