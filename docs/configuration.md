@@ -40,7 +40,9 @@ L'onglet **IA** regroupe, sous la **connexion principale** :
   modèle) est identique à la principale ;
 - des réglages de **résilience** : délai avant bascule, nombre de tentatives,
   **message d'attente** (« le suspect réfléchit… ») et **réplique de repli**
-  jouée en personnage si l'IA reste injoignable.
+  jouée en personnage si l'IA reste injoignable, chacun avec sa version
+  anglaise pour les salles jouées en anglais (voir
+  [Langue de la partie](./borne-joueur#langue-de-la-partie)).
 
 Les réglages fins de génération (tokens, historique, streaming…) sont rangés
 sous **Options avancées**.
