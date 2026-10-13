@@ -98,6 +98,8 @@ const config: Config = {
           // vitrine pages - keep old bookmarks/search results working.
           {from: '/docs/rgpd', to: '/rgpd'},
           {from: '/docs/mentions-legales', to: '/mentions-legales'},
+          // The scenario graph gave way to the instructions table and family tree.
+          {from: '/docs/graphe-scenario', to: '/docs/consignes-et-famille'},
         ],
       },
     ],
