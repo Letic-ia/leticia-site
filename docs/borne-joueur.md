@@ -218,6 +218,7 @@ administrateur qui installe l'intégration dans le logiciel de salle.
 | Réinitialiser la salle | `POST /api/cogs/rooms/{id}/game/reset` |
 | Activer un déclencheur | `POST /api/cogs/rooms/{id}/triggers/{trigger_id}/activate` |
 | Désactiver un déclencheur | `POST /api/cogs/rooms/{id}/triggers/{trigger_id}/deactivate` |
+| Ouvrir l'[accusation finale](accusation-finale) | `POST /api/cogs/rooms/{id}/accusation/open` |
 
 Le jeton se transmet soit en paramètre d'URL (`?token=…`), soit en en-tête
 `X-Room-Token`.
@@ -253,6 +254,7 @@ recevoir :
 | Personnage choisi sur la borne | Les joueurs choisissent un personnage, au toucher ou par badge. |
 | Réplique du MJ | Le maître du jeu fait parler un personnage depuis la console. |
 | Action d'un personnage | Un personnage vient d'accomplir une action de sa fiche (voir ci-dessous). |
+| Accusation finale | Ouverture, bonne ou mauvaise accusation, fin des derniers mots du coupable (voir [Accusation finale](accusation-finale#prévenir-le-logiciel-de-salle)). |
 
 Pour « Personnage choisi » et « Réplique du MJ », la règle peut viser **un
 personnage précis** ou tous. Une règle « Action d'un personnage » vise
