@@ -8,6 +8,11 @@ Toutes vos données (scénarios, personnages, sessions, réglages) tiennent dans
 seule base SQLite. Leticia gère des **sauvegardes** de cette base et permet aussi
 de l'exporter/réimporter comme un fichier.
 
+:::tip
+Pour transmettre **un seul** scénario à une autre installation sans toucher à
+sa base, voir [Partager un scénario](./partager-un-scenario).
+:::
+
 ## Sauvegardes automatiques et manuelles
 
 Dans **Paramètres → Données → Sauvegardes** :

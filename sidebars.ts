@@ -20,7 +20,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Installer & configurer',
-      items: ['installation', 'configuration', 'comptes', 'borne-joueur', 'premiere-session', 'consignes-et-famille'],
+      items: ['installation', 'configuration', 'comptes', 'borne-joueur', 'premiere-session', 'consignes-et-famille', 'partager-un-scenario'],
     },
     {
       type: 'category',
