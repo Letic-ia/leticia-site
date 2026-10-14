@@ -19,6 +19,9 @@ zéro**. Les chiffres viennent du débrief de chaque partie, qui est conservé
 après la remise à zéro : rien n'est perdu quand la salle est préparée pour le
 groupe suivant.
 
+Il en va de même pour l'[effacement automatique des résumés](sauvegarde#effacement-automatique-des-résumés-de-partie)
+au bout de 7 jours : seul le texte du résumé part, la partie reste comptée.
+
 La **durée** d'une partie va du départ à l'arrêt. Une salle remise à zéro
 longtemps après le départ du groupe ne gonfle donc pas la durée.
 

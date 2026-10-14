@@ -37,6 +37,26 @@ Sur l'application **Windows**, les sauvegardes sont stockées dans
 `%APPDATA%\Leticia\backups`, à côté de la base : elles sont donc conservées lors
 d'une mise à jour de l'application.
 
+## Effacement automatique des résumés de partie
+
+Le débrief de chaque partie contient un **résumé rédigé par l'IA**, qui
+raconte ce qu'a fait le groupe. Il n'est pas gardé indéfiniment : dans
+**Paramètres → Données → Résumés des parties**, le réglage **Conserver les
+résumés (jours)** vaut **7** par défaut. Passé ce délai après la partie, le
+résumé est effacé et le débrief l'indique.
+
+- Les **chiffres** de la partie (durée, questions, révélations, verdict) sont
+  conservés : les [chiffres de vos salles](statistiques) ne perdent rien.
+- **0** désactive l'effacement.
+- Les conversations elles-mêmes, ce que les joueurs et les personnages se
+  sont dit, sont déjà effacées à chaque **remise à zéro** de la salle.
+
+:::info
+Les sauvegardes déjà faites contiennent encore les résumés de leur date. Ils
+disparaissent avec la sauvegarde elle-même (au-delà du nombre de sauvegardes
+automatiques conservées, ou quand vous la supprimez).
+:::
+
 ## Exporter
 
 Dans **Paramètres → Données → Exporter une base**, téléchargez un fichier de
