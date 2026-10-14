@@ -89,12 +89,22 @@ Après la confirmation, la borne enchaîne :
 2. les **derniers mots**, sous-titrés et dits avec la voix du personnage ;
 3. l'**écran de fin**, avec les chiffres choisis dans le scénario.
 
-Elle reste sur cet écran jusqu'à l'arrêt ou la remise à zéro de la salle.
+Elle reste sur cet écran jusqu'à l'arrêt de la partie, puis passe à l'écran
+final du groupe, qui reste jusqu'à la remise à zéro (voir [à la fin de la
+partie](piloter-les-salles#à-la-fin-de-la-partie)).
 
 ## Le débrief
 
 Le lien **Voir le débrief de la partie**, dans le panneau de la salle, ouvre
-une page qui raconte la partie :
+une page qui raconte la partie. Elle commence par **l'essentiel pour le
+débrief oral**, ce qu'on dit au groupe en sortant de la salle :
+
+- le verdict et la durée ;
+- les secrets obtenus, et la liste de ceux qui sont passés inaperçus ;
+- le suspect le plus interrogé ;
+- les suspects jamais interrogés.
+
+Viennent ensuite les détails :
 
 - le **verdict**, l'heure, la durée et le nombre de questions ;
 - un **résumé de l'enquête** rédigé par l'IA (il arrive quelques secondes

@@ -69,11 +69,38 @@ minutes (10 par défaut quand on l'active). L'alerte est propre au scénario :
 une enquête courte et une enquête longue n'ont pas le même rythme.
 
 Quand le délai est dépassé pendant une partie, la console de la salle affiche
-« Aucune question depuis 12 min » et une notification apparaît ; la carte de
-la salle le signale aussi. C'est le moment de relancer le groupe : activer un
-déclencheur, ou faire dire une réplique à un personnage depuis la console.
+« Aucune question depuis 12 min » et la carte de la salle le signale aussi.
+C'est le moment de relancer le groupe : activer un déclencheur, ou faire dire
+une réplique à un personnage depuis la console.
 
 L'alerte se règle par un administrateur. Sans réglage, aucune alerte.
+
+## Être prévenu en regardant ailleurs
+
+Le maître du jeu n'a pas toujours les yeux sur la bonne salle. Trois
+événements le préviennent **sur toutes les pages de la console**, même si
+l'onglet de Leticia est caché derrière un autre :
+
+- un **groupe bloqué** (voir plus haut) ;
+- une **borne qui décroche** pendant une partie (écran en veille, navigateur
+  fermé, réseau coupé) ; son retour est signalé aussi ;
+- une **vérification de la salle** qui trouve un problème.
+
+Chaque alerte apparaît une fois, en bas de l'écran, avec **un son**. Le
+bouton **Alertes sonores**, en bas du menu, règle ce poste :
+
+- au premier clic, Leticia demande au navigateur le droit d'afficher des
+  **notifications** : l'alerte s'affiche alors aussi par-dessus les autres
+  fenêtres, et un clic dessus ouvre la salle concernée ;
+- les clics suivants coupent ou rétablissent le son, pour ce poste
+  seulement : le poste de la salle sonne, l'ordinateur du gérant peut rester
+  silencieux.
+
+:::note
+Les navigateurs n'affichent de notifications que sur une adresse sécurisée
+(https, ou la console ouverte sur le serveur lui-même). Sur une adresse du
+réseau local en http, seul le son prévient.
+:::
 
 ## Réglages de la salle
 
@@ -90,10 +117,20 @@ suivent le scénario joué, voir [ce que vous pouvez configurer](borne-joueur#ce
 
 ## À la fin de la partie
 
-Quand le maître du jeu arrête la partie, la borne affiche **« Fin de
-l'enquête »** pendant une minute, puis revient à son écran d'attente. Si les
-joueurs viennent de faire l'[accusation finale](accusation-finale), le verdict
-reste affiché.
+Le champ **Équipe**, à côté du bouton de lancement, garde le nom que le groupe
+s'est choisi. Il se remplit à l'arrivée du groupe ou après la partie, et
+s'efface à la remise à zéro.
+
+Quand le maître du jeu arrête la partie, la borne affiche l'**écran final** du
+groupe, à prendre en photo : nom de l'équipe, verdict de
+l'[accusation finale](accusation-finale) ou « Fin de l'enquête » sans
+accusation, durée, secrets découverts, questions posées et date. Il reste
+affiché jusqu'à la **remise à zéro** de la salle ou la partie suivante ; la
+borne revient alors à son écran d'attente.
+
+Le [débrief](accusation-finale#le-débrief) s'ouvre sur l'essentiel à dire au
+groupe en sortant : ce qu'il a trouvé, ce qu'il a raté, le suspect qu'il a
+le plus interrogé et ceux qu'il a laissés de côté.
 
 Le débrief de la partie est conservé même après la remise à zéro de la salle :
 c'est lui qui alimente les [chiffres de vos salles](statistiques).

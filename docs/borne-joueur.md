@@ -154,9 +154,12 @@ personnages répondent (mots simples, phrases courtes, ton bienveillant).
 - **Pendant la partie**, chaque suspect sans portrait a un médaillon à ses
   initiales, d'une couleur propre. Pendant que l'IA réfléchit, des points
   animés montrent que la question a bien été entendue.
-- **Après l'arrêt**, la borne affiche **« Fin de l'enquête »** et invite le
-  groupe au débrief pendant une minute, puis revient à l'attente. Un verdict
-  d'[accusation finale](accusation-finale) reste affiché.
+- **Après l'arrêt**, la borne affiche l'**écran final** du groupe, celui
+  qu'on prend en photo en sortant : le nom de l'équipe, le verdict de
+  l'[accusation finale](accusation-finale) (ou « Fin de l'enquête » sans
+  accusation), la durée, les secrets découverts, les questions posées et la
+  date. Il reste affiché jusqu'à la remise à zéro de la salle ou la partie
+  suivante, même si la page de la borne est rechargée.
 
 ## Langue de la partie
 
