@@ -6,6 +6,31 @@ title: Première session
 
 Une fois l'IA et la voix configurées, voici le parcours pour animer une enquête.
 
+## La liste « Avant la première partie »
+
+Tant que l'installation n'est pas prête, le **tableau de bord** d'un
+administrateur affiche la liste **Avant la première partie**, en cinq étapes :
+
+1. **Faire répondre l'IA** : dans **Paramètres**, « Tester le dialogue ».
+2. **Faire parler et écouter la borne** : dans **Paramètres**, « Tester la
+   transcription » (une phrase est dite, puis réécoutée).
+3. **Préparer un scénario et ses suspects** : un scénario avec au moins un
+   personnage.
+4. **Ouvrir une salle**.
+5. **Appairer la borne et la lier à une salle** : voir
+   [l'appairage](borne-joueur#appairage).
+
+Chaque étape mène à l'écran où elle se fait. La liste se masque d'un clic
+(« Masquer pour l'instant ») et revient par son résumé ; elle disparaît
+d'elle-même quand tout est prêt.
+
+L'IA et la voix ne comptent comme prêtes qu'après avoir **vraiment répondu**
+avec les réglages en place : un test réussi, ou une vraie réponse en partie.
+Changer de fournisseur, d'adresse, de modèle ou de voix les remet à « pas
+encore essayée ». Le badge de l'IA en haut du tableau de bord suit la même
+règle : **vert** si elle a répondu, **orange** si elle n'a pas encore été
+essayée, **rouge** si le dernier essai a échoué.
+
 ## 1. Créer un scénario
 
 Dans **Scénarios → Nouveau scénario**, décrivez l'enquête : titre, résumé, lieu,
@@ -64,6 +89,11 @@ un déclencheur retire aussi ces réglages, après confirmation.
 
 Créez une **salle** rattachée au scénario. C'est l'instance de jeu : les joueurs
 y interrogent les personnages, chaque échange est enregistré.
+
+Avant l'arrivée du groupe, le bouton **Vérifier la salle** teste la borne, la
+voix de chaque suspect et la transcription. Le suivi d'une journée de jeu
+(cartes des salles, chrono, alerte de groupe bloqué) est décrit dans
+[piloter les salles au quotidien](piloter-les-salles).
 
 ## 5. Interroger
 

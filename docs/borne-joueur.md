@@ -110,7 +110,12 @@ faites parler les personnages depuis la console.
 
 ## Ce que vous pouvez configurer
 
-Depuis la console, dans la salle, panneau **Configuration de la borne** :
+L'affichage de la borne se règle **dans le scénario**, pas dans la salle :
+page du scénario, section **Borne des joueurs**, onglet **Affichage**
+(réservé aux administrateurs). Une enquête garde ainsi son look dans toutes
+les salles qui la jouent, et un aperçu montre le résultat avant d'enregistrer.
+Depuis une salle, **Réglages de la salle → Ouvrir les réglages de la borne**
+mène au bon scénario.
 
 | Réglage | Effet sur l'écran joueur |
 |---|---|
@@ -139,6 +144,19 @@ polices externes.
 
 Le **mode enfant**, réglé au niveau de la salle, change la façon dont les
 personnages répondent (mots simples, phrases courtes, ton bienveillant).
+
+## Ce que voient les joueurs avant et après
+
+- **Avant la partie**, la borne affiche le titre de la dernière enquête jouée
+  sur elle, son lieu et son époque, aux couleurs du scénario : « Le maître du
+  jeu va bientôt ouvrir l'enquête ». Une borne neuve affiche un écran d'attente
+  neutre.
+- **Pendant la partie**, chaque suspect sans portrait a un médaillon à ses
+  initiales, d'une couleur propre. Pendant que l'IA réfléchit, des points
+  animés montrent que la question a bien été entendue.
+- **Après l'arrêt**, la borne affiche **« Fin de l'enquête »** et invite le
+  groupe au débrief pendant une minute, puis revient à l'attente. Un verdict
+  d'[accusation finale](accusation-finale) reste affiché.
 
 ## Langue de la partie
 
@@ -193,7 +211,9 @@ Plutôt que de choisir un personnage à l'écran, les joueurs peuvent poser un
 badge sur un lecteur : la borne bascule directement sur le personnage
 correspondant.
 
-L'association badge → personnage se fait dans la salle, onglet **Badges RFID**.
+L'association badge → personnage se fait dans le scénario, section **Borne
+des joueurs**, onglet **Badges RFID** : un badge désigne un personnage de ce
+scénario, quelle que soit la salle.
 Un lecteur RFID branché sur la borne se comporte généralement comme un clavier
 et « tape » l'identifiant du badge, ce qui suffit.
 
@@ -202,13 +222,14 @@ et « tape » l'identifiant du badge, ce qui suffit.
 La borne n'est pas le seul moyen de piloter une partie : le **logiciel de salle**
 (COGS, système de scénographie maison…) peut agir sur Leticia par HTTP.
 
-Chaque salle possède son **jeton de webhook**, visible dans la salle, onglet
-**Intégrations**. Les appels s'authentifient avec ce jeton, pas avec le compte
+Chaque salle possède son **jeton de webhook**, visible dans la console de la
+salle, fenêtre **Réglages de la salle** (l'icône d'engrenage en haut de la
+console). Les appels s'authentifient avec ce jeton, pas avec le compte
 opérateur : le logiciel de salle n'a donc jamais besoin d'un mot de passe.
 
 Ce jeton suffit à lancer, arrêter ou réinitialiser la salle et à basculer ses
 déclencheurs. Il est donc **réservé aux administrateurs** : un opérateur non
-administrateur ne voit pas l'onglet **Intégrations**, et c'est un
+administrateur ne voit pas le bouton **Réglages de la salle**, et c'est un
 administrateur qui installe l'intégration dans le logiciel de salle.
 
 | Action | Appel |
@@ -241,7 +262,7 @@ inverse : Leticia **appelle** le logiciel de salle quand quelque chose se
 passe dans l'interrogatoire. C'est ce qui permet qu'un suspect ouvre un
 cadenas, allume une lumière ou lance un son.
 
-Cela se règle dans la même section, onglet **Intégrations**, partie
+Cela se règle dans la même fenêtre **Réglages de la salle**, partie
 **Actions (Leticia → salle)**, toujours par un administrateur. Chaque
 **règle** associe un événement à une URL que le logiciel de salle sait
 recevoir :
