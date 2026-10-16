@@ -11,7 +11,10 @@ Leticia gère des comptes locaux avec deux rôles.
 | | **Administrateur** | **Utilisateur** |
 |---|---|---|
 | Lancer et animer des sessions | ✅ | ✅ |
+| Alertes, écran final de la borne, débrief | ✅ | ✅ |
 | Consulter scénarios & personnages | ✅ | ✅ |
+| Créer / renommer / supprimer une salle | ✅ | ❌ |
+| Appairer, renommer, retirer une borne | ✅ | ❌ |
 | Créer / modifier / supprimer du contenu | ✅ | ❌ |
 | Paramètres (IA, voix, providers) | ✅ | ❌ |
 | Journal | ✅ | ❌ |
